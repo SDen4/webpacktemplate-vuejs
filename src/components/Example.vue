@@ -1,9 +1,8 @@
-<template>
-    <div>
-        <h1>Section2!</h1>
-        <h2>{{message}}</h2>
-        <img src="/assets/images/1.jpg" alt="">
-    </div>
+<template lang="pug">
+    div
+        h1 Section2!
+        h2 {{message}}
+        img(src='/assets/images/1.jpg', alt='')
 </template>
 
 <script>

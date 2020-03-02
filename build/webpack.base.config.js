@@ -27,6 +27,15 @@ module.exports = {
     },
     module: {
         rules: [{
+            test: /\.pug$/,
+            oneOf: [{
+                resourceQuery: /^\?vue/,
+                use: ["pug-plain-loader"]
+            }, {
+                use: ['html-loader', 'pug-html-loader']
+            }]
+        },
+        {
             test: /\.js$/,
             loader: "babel-loader",
             exclude: "/node_modules/"
@@ -94,7 +103,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin ({
             hash: false,
-            template: `${PATHS.src}/index.html`,
+            template: `${PATHS.src}/pug/pages/index.pug`,
             filename: "./index.html"
         }),
         new CopyWebpackPlugin([
